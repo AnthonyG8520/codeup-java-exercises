@@ -1,4 +1,4 @@
-public class SyntaxTypesVariables {
+public class SyntaxTypesVariableNotes {
     public static void main (String[] args){
         //primitive data types
         //not objects
@@ -68,6 +68,10 @@ public class SyntaxTypesVariables {
         int almostPi = (int) pi;
         System.out.println(pi);
         System.out.println(almostPi);
+
+        byte l = 127;
+        l++;
+        System.out.println(l);
 
     }
 }
