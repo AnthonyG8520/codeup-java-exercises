@@ -1,3 +1,5 @@
+package Notes;
+
 public class SyntaxTypesVariableNotes {
     public static void main (String[] args){
         //primitive data types

@@ -27,8 +27,10 @@ public class ConsoleExercises {
         String w = scanner.nextLine();
         int length = Integer.parseInt(l);
         int width = Integer.parseInt(w);
-        int result = length * width;
-        System.out.printf("The area is %S.%n",result);
+        int area = length * width;
+        int perimeter = (length * 2) + (width * 2);
+        System.out.printf("The area is %S.%n",area);
+        System.out.printf("The perimeter is %s.%n", perimeter);
 
     }
 }
