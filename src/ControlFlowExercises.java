@@ -53,9 +53,10 @@ public class ControlFlowExercises {
 //            }
 //        }
 
-            System.out.print("Enter a grade between 0 and 100:");
-            int grade = scan.nextInt();
+            String userAnswer = "";
             do{
+                System.out.print("Enter a grade between 0 and 100:");
+                int grade = scan.nextInt();
                 if (grade >= 88) {
                 System.out.println("Your grade is an: A");
             } else if (grade >= 80) {
@@ -67,8 +68,8 @@ public class ControlFlowExercises {
             } else if (grade >= 0) {
                 System.out.println("Your grade is an: F");
             }System.out.print("Would you like to continue? [y/n]");
-            String userAnswer = scan.next();
-        }while();
+            userAnswer = scan.next();
+        }while(userAnswer.equals("y"));
 
     }
 }
