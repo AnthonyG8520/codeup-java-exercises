@@ -38,18 +38,28 @@ public class MethodsExercises {
     //-------------------------------------
 
     //2.----------------------------
-    public static int getInteger(int min, int max){
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter a number between " + min + " and " + max + ":");
-        int userInput = scan.nextInt();
-        System.out.println("user entered" + userInput);
-        if(userInput <= min || userInput >= max){
-            System.out.println("That number is out of range. Try another.");
-            getInteger(min, max);
-        }return userInput;
-    }
+//    public static int getInteger(int min, int max){
+//        Scanner scan = new Scanner(System.in);
+//        System.out.print("Enter a number between " + min + " and " + max + ":");
+//        int userInput = scan.nextInt();
+//        System.out.println("user entered" + userInput);
+//        if(userInput <= min || userInput >= max){
+//            System.out.println("That number is out of range. Try another.");
+//            getInteger(min, max);
+//        }return userInput;
+//    }
     //------------------------------------
 
+//    public static int getInteger(int min, int max){
+//        Scanner scan = new Scanner(System.in);
+//        System.out.print("Enter a number between " + min + " and " + max + ":");
+//        int userInput = scan.nextInt();
+//        System.out.println("user entered" + userInput);
+//        if(userInput >= min || userInput <= max){
+//           return userInput;
+//        } else System.out.println("That number is out of range. Try another.");
+//        getInteger(min, max);
+//    }
 
 
 
