@@ -13,7 +13,7 @@ public class MethodsExercises {
 //        getInteger(0,100);
 //        factorial();
 //        HighLow();
-        rollDice();
+//        rollDice();
     }
 
     //--------------------------------CUSTOM METHODS--------------------------------------------------------
@@ -78,6 +78,11 @@ public class MethodsExercises {
         }
         print += " = " + result;
         System.out.println(print);
+        System.out.print("Again?");
+        String answer = scan.next();
+        if(answer.equalsIgnoreCase("yes")){
+            factorial();
+        }
     }
 
     //4.--------------------------------
