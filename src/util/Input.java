@@ -30,10 +30,10 @@ public class Input {
         }
     }
 
-    public static void getInt(){
+    public static int getInt(){
         System.out.print("Enter a number:");
         int userInput = scanner.nextInt();
-        System.out.println(userInput);
+        return userInput;
     }
 
     public static void getDouble(int min, int max){
