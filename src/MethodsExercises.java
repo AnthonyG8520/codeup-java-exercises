@@ -11,8 +11,9 @@ public class MethodsExercises {
 //        System.out.println(multiply(10,2));
 //        System.out.println(remainder(7,2));
 //        getInteger(0,100);
-        factorial();
+//        factorial();
 //        HighLow();
+        rollDice();
     }
 
     //--------------------------------CUSTOM METHODS--------------------------------------------------------
@@ -81,7 +82,19 @@ public class MethodsExercises {
 
     //4.--------------------------------
 
-
+    public static void rollDice(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter an amount of sides for dice:");
+        int sides = scan.nextInt();
+        long num1 = Math.round(Math.floor(Math.random()*(sides-1+1)+1));
+        long num2 = Math.round(Math.floor(Math.random()*(sides-1+1)+1));
+        System.out.printf("You rolled " + num1 + " and " + num2 + "%n");
+        System.out.print("Roll again?");
+        String answer = scan.next();
+        if(answer.equalsIgnoreCase("yes")){
+            rollDice();
+        }
+    }
 
 
 
