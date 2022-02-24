@@ -13,7 +13,7 @@ public class HighLow {
                 System.out.println("Lower");
             }else if(userGuess < num){
                 System.out.println("Higher");
-            }else System.out.println("You got it.");
+            }else System.out.println("GOOD GUESS!");
         }while(userGuess != num);
     }
     public static void main(String[] args) {

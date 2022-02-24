@@ -10,10 +10,10 @@ public class MethodsExercises {
 //        System.out.println(divide(10,5));
 //        System.out.println(multiply(10,2));
 //        System.out.println(remainder(7,2));
-//        getInteger(0,100);
+//        getInteger(0, 100);
 //        factorial();
 //        HighLow();
-//        rollDice();
+        rollDice();
     }
 
     //--------------------------------CUSTOM METHODS--------------------------------------------------------
@@ -46,10 +46,10 @@ public class MethodsExercises {
 //        Scanner scan = new Scanner(System.in);
 //        System.out.print("Enter a number between " + min + " and " + max + ":");
 //        int userInput = scan.nextInt();
-//        System.out.println("user entered" + userInput);
+////        System.out.println("user entered " + userInput);
 //        if(userInput <= min || userInput >= max){
 //            System.out.println("That number is out of range. Try another.");
-//            getInteger(min, max);
+//            return getInteger(min, max);
 //        }return userInput;
 //    }
 
@@ -91,8 +91,8 @@ public class MethodsExercises {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter an amount of sides for dice:");
         int sides = scan.nextInt();
-        long num1 = Math.round(Math.floor(Math.random()*(sides-1+1)+1));
-        long num2 = Math.round(Math.floor(Math.random()*(sides-1+1)+1));
+        long num1 = Math.round(Math.random() * sides+1);
+        long num2 = Math.round(Math.random() * sides+1);
         System.out.printf("You rolled " + num1 + " and " + num2 + "%n");
         System.out.print("Roll again?");
         String answer = scan.next();
