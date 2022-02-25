@@ -1,8 +1,8 @@
 package Shapes;
 
 public class Rectangle {
-    public int width;
-    public int length;
+    protected int width;
+    protected int length;
 
     public Rectangle(int l, int w){
         this.width = w;
