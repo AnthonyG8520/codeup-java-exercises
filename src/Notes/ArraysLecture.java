@@ -39,42 +39,164 @@ public class ArraysLecture {
             //Arrays.toString() prints the array in string format
         System.out.println(Arrays.toString(dailySteps));
 
-        //iterating through arrays
+        // TODO: Create an array of ints and print out the array
+
+        // HOW TO ITERATE THROUGH ARRAYS
+
+        // //TODO: 👩🏼‍💻 Let’s create a method (sumAll) that returns the sum of all integers in an int array (nums)
+        // example: array of ints:[5, 2, 3, 1] // returns: 11
+
+        // // // PSEUDOCODE
+        // 1. create a method (nums)
+        // // what's the method signature? --> public static
+        // // what data type (if any) is being returned from this method --> int
+        //
+        // 2. create an array of ints
+        // // 2a. What's the length of our array? --> (5)
+        // // 2b. Where does this array go? --> in sumAll method
+
+        // 3. Assign values to the array
+        // // how are we going to initialize the arrat of ints?
+        // // // array literal {}
+        // // // array declaration new int[]
+
+        // 4. iterate through our elements in the array
+        // // where does the iteration live? --> inside of the sumAll()
+        // // how do you want to iterate?
+        // // // traditional FOR loop
+        // // // ** enhanced for
+
+        // 5. create a variable to store the sum
+        // // where does this variable live? --> in sumAll() --> before (outside) loop
+        // // what's this variable's type (int)
+        // // what's this variable's starting point?
+
+        // 6. add logic that will add each element to itself?
+        // where does this logic live?
+        // int sum;
+        // // [1,5,3,2]
+        //  //  ** sum variable = sum + index of element **
+        // // 1st iteration: sum = 0 -> sum = 0 + 1 // sum = 1;
+        // // 2nd iteration: sum = 1 -> sum = 1 + 5 // sum = 6;
+
+        // 7. return the sum;
+        // // where does this return statement live? --> in sumAll() after (outside) loop
+
+        // 8. call the method
+        // // where and how do we call the method --> in PSVM
+        // // sout the result of the sumAll method
 
 
-        //traditional FOR
-//            String[] names = {"cody", "Kenneth", "jordy"};
-//            System.out.println(names.length);
-//            for(int i = 0; i < names.length; i++){
-//                System.out.println(names[i]);
-//            }
+        // // // TRADITIONAL FOR LOOP
+//        String[] names = {"Cody", "Kenneth", "Jordy", "Laura"};
+//        System.out.println(names.length);
+//        for(int i = 0; i < names.length; i += 1){
+//            System.out.println(names[i]);
+//        }
+
+        // // // ENHANCED FOR
+        // similar to .forEach() in js
+
+//        String[] names = {"Cody", "Kenneth", "Jordy", "Laura"};
+//        System.out.println(names.length); //4
+////        for (data type and name of variable : name of the array we're iterating through )
+//        for(String name: names ){
+//            System.out.println(name);
+//        }
 
 
-        //enhanced FOR
-            //similar to .forEach() is js
-        //for(data type and name of variable : name of the array we're iterating)
-            String[] names = {"cody", "Kenneth", "jordy"};
-            System.out.println(names.length);
-            for(String name : names){
-                System.out.println(name);
+        // // // SOLUTION (see sumAll() method outside of main)
+        // 8. call the sumAll method and print the results
+//        System.out.println(sumAll());
+
+//        String[] dogs = {"boxer", "schnauzer","poodle"};
+////        dogs[3] = "chihuahua";
+//        System.out.println(Arrays.toString(dogs));
+
+        // ARRAYS CLASS
+
+        // // ARRAYS.FILL()
+//        String[] languages = {"French", "Portuguese", "Dutch"};
+//        System.out.println(Arrays.toString(languages));
+//        Arrays.fill(languages, "French");
+//        System.out.println(Arrays.toString(languages));
+//        // changing the existing/original array
+
+
+        // // ARRAYS.EQUALS()
+        String[] answer = {"apart", "learn", "knock"}; // 3
+        String[] KenGuess = {"texas", "green", "knock"}; // 3
+//        System.out.println(Arrays.equals(answer, KenGuess));
+        // accepts two params
+        // returns a boolean
+        boolean isKenRight = Arrays.equals(answer, KenGuess);
+//        System.out.println(isKenRight);
+
+
+        // // ARRAYS.COPYOF()
+        String[] lauraCopy = Arrays.copyOf(answer, answer.length);
+//        System.out.println(Arrays.toString(lauraCopy));
+
+        // // ARRAYS.TOSTRING()
+
+        // // ARRAYS.SORT()
+//        String[] languages = {"French", "Portuguese", "Dutch"};
+//        System.out.println(Arrays.toString(languages));
+//        Arrays.sort(languages);
+//        System.out.println(Arrays.toString(languages));
+
+//        int[] random = {3,12,17,4, 8};
+//        System.out.println(Arrays.toString(random));
+//        Arrays.sort(random);
+//        System.out.println(Arrays.toString(random));
+
+
+        // TWO-DIMENSIONAL ARRAYS
+//        {
+//            [x][x][x][x],
+//            [x][x][x][x],
+//            [x][x][x][x],
+//            [x][x][x][x]
+//        }
+
+        int[] myArr = new int[3];
+
+        int[][] myMatrix = {
+                {4,5,9,7},
+                {1,5,9,6},
+                {2,2,7,4},
+                {3,8,6,5}
+        };
+
+        int[][] newMatrix = new int[4][4];
+        newMatrix[0][0] = 8;
+        newMatrix[3][3] = 2;
+        System.out.println(Arrays.deepToString(newMatrix));
+
+//        System.out.println(Arrays.deepToString(myMatrix));
+
+        // print out every nested element in the matrix
+        // do a loop
+        // do another loop
+        // loop de loop
+
+        for(int[] rows: myMatrix){
+            System.out.println("------ this is a new row ----------") ;
+            for(int column: rows){
+                System.out.println(column);
             }
-
-        System.out.println(sumAll());
-
-        //ARRAYS CLASS
-
-            // arrays.fill()
-            // changing the existing/original array
-                String[] languages = {"french", "english", "Dutch"};
-                System.out.println(Arrays.toString(languages));
-                Arrays.fill(languages, "french");
-                System.out.println(Arrays.toString(languages));
-
-            //arrays.equals()
+        }
 
 
 
 
+
+
+
+        int[] warmup = {3,1,7,2,8,3,5}; // 19, 10
+//
+        int[] solution = warmupMethod(warmup);
+//        System.out.println(Arrays.toString(solution));
 
 
 
