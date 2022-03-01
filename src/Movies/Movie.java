@@ -25,8 +25,6 @@ public class Movie {
         return this.category;
     }
 
-    public static void findMovie(){
 
-    }
 
 }

@@ -193,10 +193,10 @@ public class ArraysLecture {
 
 
 
-        int[] warmup = {3,1,7,2,8,3,5}; // 19, 10
-//
-        int[] solution = warmupMethod(warmup);
-//        System.out.println(Arrays.toString(solution));
+//        int[] warmup = {3,1,7,2,8,3,5}; // 19, 10
+////
+//        int[] solution = warmupMethod(warmup);
+////        System.out.println(Arrays.toString(solution));
 
 
 
