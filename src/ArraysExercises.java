@@ -11,13 +11,13 @@ public class ArrayExercises {
         users[1] = new Person("p2");
         users[2] = new Person("p3");
 
-        for(Person user : users){
-            System.out.println(user.getName());
-        }
+//        for(Person user : users){
+//            System.out.println(user.getName());
+//        }
 
         Person man = new Person("ant");
 
-        System.out.println(addPerson(users, man));
+        System.out.println(Arrays.toString(addPerson(users, man)));
 
 
 
