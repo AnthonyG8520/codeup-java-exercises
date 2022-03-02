@@ -18,7 +18,6 @@ public class MoviesApplication {
                 "7 - view movies in the scifi category\n");
         System.out.print("Enter your choice here:");
         String userInput = scanner.next();
-//        if(userInput.equals("0")){}
         for(int i = 0; i < movies.length; i++){
             if(userInput.equals("0")){
                 return;
