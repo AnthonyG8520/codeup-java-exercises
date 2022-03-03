@@ -17,11 +17,10 @@ public class ShapesTest {
 
         System.out.println(myShape.getArea());
 
-        myShape = new Rectangle(4,3);
+        myShape = new Rectangle(3,5);
 
         System.out.println(myShape.getPerimeter());
 
-        System.out.println(myShape.getPerimeter());
 
     }
 }
