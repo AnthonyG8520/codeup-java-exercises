@@ -14,6 +14,8 @@ public class GradesApplication {
     public static void getInfo(Student x){
         System.out.println("Name: " + x.name + " -- " + "Github username: " + userInput);
         System.out.println("Current average: " + getGradeAverage(x));
+        x.attendAverage();
+        x.daysAbsent();
     }
 
     public static void studentReport(){
@@ -70,12 +72,6 @@ public class GradesApplication {
         stu1.recordAttendance("12/21", "P");
         stu1.recordAttendance("12/24", "A");
         stu1.recordAttendance("12/27", "P");
-
-
-        System.out.println(stu1.attendance.values());
-        System.out.println(stu1.attendance.size());
-        System.out.println(stu1.attendAverage());
-
 
         studentReport();
 

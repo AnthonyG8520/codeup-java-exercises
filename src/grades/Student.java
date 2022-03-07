@@ -1,5 +1,7 @@
 package grades;
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Student {
@@ -13,24 +15,35 @@ public class Student {
         this.attendance = new HashMap<>();
     }
 
+    //shows the dates a student was absent
+    public void daysAbsent(){
+        String absences = "";
+        for(String day : this.attendance.keySet()){
+            if(attendance.get(day).equalsIgnoreCase("A")){
+                absences += day + ", ";
+            }
+        }System.out.println("Absences:" + absences);
+    }
+
     //adds attendance record to student
     public void recordAttendance(String date, String value){
         this.attendance.put(date,value);
     }
 
     //gets attendance average
-    public double attendAverage(){
-        int totalDays = this.attendance.size();
-        int absences = 0;
-        for(String val : this.attendance.values()){
-            if(val.equalsIgnoreCase("A")){
-                System.out.println(absences);
-                absences++;
-                System.out.println(absences);
-            }else;
+    public void attendAverage(){
+        double totalDays = this.attendance.size();
+        double absences = 0;
+        if(this.attendance.isEmpty()){
+            System.out.println("Attendance average: No attendance info for this student.");
+            return;
         }
-        double average = (totalDays - absences) / totalDays;
-        return average;
+        for(String val : this.attendance.values()){
+            if(val.equalsIgnoreCase("A")) {
+                absences++;
+            }
+        }double average = (totalDays - absences) / totalDays * 100;
+        System.out.println("Attendance average: " + average + "%");
     }
 
     // returns the student's name
