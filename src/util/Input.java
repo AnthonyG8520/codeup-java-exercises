@@ -6,10 +6,10 @@ public class Input {
     public static Scanner scanner = new Scanner(System.in);
 
 
-    public static void getString(){
+    public static String getString(){
         System.out.print("Enter a string:");
         String input = scanner.nextLine();
-        System.out.println(input);
+        return input;
     }
 
     public static boolean yesNo(){
@@ -21,8 +21,17 @@ public class Input {
     }
 
     public static void getInt(int min, int max){
+        int userInput = 0;
         System.out.print("Enter a number between " + min + " and " + max + ":");
-        int userInput = scanner.nextInt();
+//        int userInput = scanner.nextInt();
+        try {
+            String stringInt = getString();
+            userInput = Integer.valueOf(stringInt);
+        }catch(NumberFormatException e){
+            System.out.println(e);
+            System.out.println("That number is not valid");
+            e.printStackTrace();
+        }
         if(userInput >= min && userInput <= max){
             System.out.println(userInput);
         } else{ System.out.println("That number is out of range. Try another.");
@@ -37,8 +46,16 @@ public class Input {
     }
 
     public static void getDouble(int min, int max){
+        double userInput = 0;
         System.out.print("Enter a decimal between " + min + " and " + max + ":");
-        double userInput = scanner.nextDouble();
+        try {
+            String stringInt = getString();
+            userInput = Double.valueOf(stringInt);
+        }catch(NumberFormatException e){
+            System.out.println(e);
+            System.out.println("That number is not valid");
+            e.printStackTrace();
+        }
         if(userInput >= min && userInput <= max){
             System.out.println(userInput);
         } else{ System.out.println("That number is out of range. Try another.");
@@ -59,6 +76,7 @@ public class Input {
 //        getInt();
 //        getDouble(1,10);
 //        getDouble();
+
 
 
     }
