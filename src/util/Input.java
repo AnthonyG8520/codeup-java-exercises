@@ -27,10 +27,9 @@ public class Input {
         try {
             String stringInt = getString();
             userInput = Integer.valueOf(stringInt);
-        }catch(NumberFormatException e){
+        }catch(Exception e){
             System.out.println(e);
             System.out.println("That number is not valid");
-            e.printStackTrace();
         }
         if(userInput >= min && userInput <= max){
             System.out.println(userInput);
@@ -54,7 +53,6 @@ public class Input {
         }catch(NumberFormatException e){
             System.out.println(e);
             System.out.println("That number is not valid");
-            e.printStackTrace();
         }
         if(userInput >= min && userInput <= max){
             System.out.println(userInput);
