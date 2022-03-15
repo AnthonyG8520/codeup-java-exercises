@@ -11,7 +11,7 @@ public class ShapesTest {
 //        System.out.println(box2.getPerimeter());
 //        System.out.println(box2.getArea());
 
-        Measurable myShape;
+        Quadrilateral myShape;
 
         myShape = new Square(5);
 
@@ -20,6 +20,8 @@ public class ShapesTest {
         myShape = new Rectangle(3,5);
 
         System.out.println(myShape.getPerimeter());
+
+        System.out.println(myShape.getLength());
 
 
     }
