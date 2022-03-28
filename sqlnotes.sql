@@ -49,6 +49,20 @@ CREATE TABLE quotes (
                         PRIMARY KEY (id)
 );
 
+sub-query syntax
+SELECT column_a, column_b, column_c
+FROM table_a
+WHERE column_a IN (
+    SELECT column_a
+    FROM table_b
+    WHERE column_b = true
+);
+
+join syntax - reading tables using join
+SELECT columns
+FROM table_a as A
+JOIN table_b as B ON A.id = B.fk_id;
+
 
 
 
