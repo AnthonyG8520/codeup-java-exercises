@@ -35,14 +35,27 @@ public class ScratchWork {
         }
     }
 
+    public static void countDivisors(int x){
+        int numOfDivisors = 0;
+        for(int i = 1; i <= x; i++){
+            if(x % i == 0){
+                System.out.println("divisor " + i);
+                numOfDivisors++;
+                System.out.println("amt divisors " + numOfDivisors);
+            }
+        }
+    }
+
 
 
 
     public static void main(String[] args) {
-//
+
 //    fizzBuzz();
 //
 //    sumOfNums(20);
+//
+//    countDivisors(30);
 
 
 
