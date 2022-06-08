@@ -35,6 +35,22 @@ public class ScratchWork {
         }
     }
 
+    public static void sameEnding(String str, String ending){
+        //below only works if str is as long as or longer then ending
+//        int endStrLength = ending.length();
+//        int strLength = str.length();
+//
+//        int cutBeginningAmt = strLength - endStrLength;
+//
+//        String endToMatch = str.substring(cutBeginningAmt);
+//
+//        System.out.println(endToMatch);
+//
+//        System.out.println(endToMatch.equals(ending));
+
+        System.out.println(str.endsWith(ending));
+    }
+
     public static void countDivisors(int x){
         int numOfDivisors = 0;
         for(int i = 1; i <= x; i++){
@@ -51,11 +67,14 @@ public class ScratchWork {
 
     public static void main(String[] args) {
 
-//    fizzBuzz();
+//        fizzBuzz();
 //
-//    sumOfNums(20);
+//        sumOfNums(20);
 //
-//    countDivisors(30);
+//        countDivisors(30);
+
+        sameEnding("this", "fails");
+
 
 
 
