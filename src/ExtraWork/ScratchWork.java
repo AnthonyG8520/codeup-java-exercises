@@ -62,6 +62,16 @@ public class ScratchWork {
         }
     }
 
+    public static void noFives(int lowNum, int highNum){
+        int count = 0;
+        for(int i = lowNum; i <= highNum; i++){
+            if(!Integer.toString(i).contains("5")){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+
 
 
 
@@ -73,7 +83,9 @@ public class ScratchWork {
 //
 //        countDivisors(30);
 
-        sameEnding("this", "fails");
+//        sameEnding("this", "fails");
+
+//        noFives(4,17);
 
 
 
