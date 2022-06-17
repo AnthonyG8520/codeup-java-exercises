@@ -72,6 +72,19 @@ public class ScratchWork {
         System.out.println(count);
     }
 
+    public static void findUnique(double[] arr){
+        double unique = 0;
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr.length; j++){
+                if (arr[j] != arr[i]){
+                    unique = arr[j];
+                    break;
+                }
+            }
+        }
+        System.out.println(unique);
+    }
+
 
 
 
@@ -86,6 +99,8 @@ public class ScratchWork {
 //        sameEnding("this", "fails");
 
 //        noFives(4,17);
+
+//        findUnique(new double[]{1, 1, 1, 2, 1, 1, 1, 1});
 
 
 
