@@ -89,14 +89,16 @@ public class ScratchWork {
 
     public static void fixString(String str){
         String [] arrOfStr = str.split(" ");
-        System.out.println(arrOfStr.length);
+        String [] newarr = new String[arrOfStr.length];
         for(String word : arrOfStr){
             int position = parseInt(word.replaceAll("[^\\d]", ""));
-            arrOfStr[position] = word;
+            newarr[position] = word;
         }
-            for(String word : arrOfStr){
-                System.out.println(word);
-            }
+        String newString = "";
+        for(String word : newarr){
+            newString += word + " ";
+        }
+        System.out.println(newString);
     }
 
 
@@ -116,17 +118,8 @@ public class ScratchWork {
 
 //        findUnique(new double[]{1, 1, 1, 2, 1, 1, 1, 1});
 
-//        fixString("t1here ma0n");
+//        fixString("the1re ma2n hell0o");
 
-        String str = "hel1lo ther0e";
-        String [] arr = str.split(" ");
-
-//        arr[1] = "hello";
-//        arr[0] = "there";
-
-        for(String word : arr){
-            System.out.println(word);
-        }
 
 
 
