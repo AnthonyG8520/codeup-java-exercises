@@ -139,6 +139,7 @@ public class ScratchWork {
             for(char pair : pairs){
                 System.out.println(pair);
             }
+            System.out.println("-------");
         }
 
 
