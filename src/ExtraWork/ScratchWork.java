@@ -127,6 +127,20 @@ public class ScratchWork {
 
     public static int distinct(String s){
         int count = 0;
+//        String[] chars = new String[s.length()];
+        char[] pairs = new char[3];
+        char[] chars = s.toCharArray();
+        for(int i = 0; i < chars.length; i++){
+            int index = i;
+            for(int x = 0; x < 3; x++){
+                pairs[x] = chars[index];
+                index++;
+            }
+            for(char pair : pairs){
+                System.out.println(pair);
+            }
+        }
+
 
         return count;
     }
@@ -162,7 +176,7 @@ public class ScratchWork {
 //        }
 //----------------------------------------------------------------------
 
-
+        distinct("hellooo");
 
 
     }
