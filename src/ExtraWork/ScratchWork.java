@@ -101,6 +101,13 @@ public class ScratchWork {
         System.out.println(newString);
     }
 
+
+
+//        You are given an array of integers numbers and two integers left and right.
+//        You task is to calculate a boolean array result,
+//        where result[i] = true if there exists an integer x,
+//        such that numbers[i] = (i + 1) * x and left ≤ x ≤ right. Otherwise, result[i] should be set to false.
+
     public static boolean[] solution(int[] numbers, int left, int right) {
         boolean[] result = new boolean[numbers.length];
         for(int i = 0; i < numbers.length; i++){
@@ -117,6 +124,12 @@ public class ScratchWork {
         return result;
     }
 
+
+    public static int distinct(String s){
+        int count = 0;
+
+        return count;
+    }
 
 
     public static void main(String[] args) {
@@ -135,21 +148,22 @@ public class ScratchWork {
 
 //        fixString("the1re ma2n hell0o");
 
-//        You are given an array of integers numbers and two integers left and right.
-//        You task is to calculate a boolean array result,
-//        where result[i] = true if there exists an integer x,
-//        such that numbers[i] = (i + 1) * x and left ≤ x ≤ right. Otherwise, result[i] should be set to false.
 
-        int[] nums = new int[5];
-        nums[0] = 8;
-        nums[1] = 5;
-        nums[2] = 6;
-        nums[3] = 16;
-        nums[4] = 5;
+//--------------------------------------------------------------------
+//        int[] nums = new int[5];
+//        nums[0] = 8;
+//        nums[1] = 6;
+//        nums[2] = 6;
+//        nums[3] = 16;
+//        nums[4] = 5;
+//
+//        for(boolean i : solution(nums, 1, 3)){
+//            System.out.println(i);
+//        }
+//----------------------------------------------------------------------
 
-        for(boolean i : solution(nums, 1, 3)){
-            System.out.println(i);
-        }
+
+
 
     }
 }
