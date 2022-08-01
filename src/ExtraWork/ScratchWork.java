@@ -133,8 +133,14 @@ public class ScratchWork {
         for(int i = 0; i < chars.length; i++){
             int index = i;
             for(int x = 0; x < 3; x++){
-                pairs[x] = chars[index];
-                index++;
+                if(index < chars.length){
+                    pairs[x] = chars[index];
+                    index++;
+                }
+                else{
+                    break;
+                }
+
             }
             for(char pair : pairs){
                 System.out.println(pair);
