@@ -146,6 +146,9 @@ public class ScratchWork {
                 System.out.println(pair);
             }
             System.out.println("-------");
+            if(index >= chars.length){
+                break;
+            }
         }
 
 
