@@ -1,6 +1,7 @@
 package ExtraWork;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
@@ -128,7 +129,7 @@ public class ScratchWork {
     public static int distinct(String s){
         int count = 0;
 //        String[] chars = new String[s.length()];
-        char[] pairs = new char[3];
+        Character[] pairs = new Character[3];
         char[] chars = s.toCharArray();
         for(int i = 0; i < chars.length; i++){
             int index = i;
@@ -142,10 +143,25 @@ public class ScratchWork {
                 }
 
             }
-            for(char pair : pairs){
-                System.out.println(pair);
+//          add code for checking for repeated characters here
+            boolean isDistinct = false;
+            for(int c = 0; c < 3; c++){
+                for(int j = c + 1; j < 3; j++){
+                    if(pairs[c] != pairs[j]){
+                        isDistinct = true;
+                    }else{
+                        isDistinct = false;
+                        break;
+                    }
+                }
+                if(!isDistinct){
+                    break;
+                }
             }
-            System.out.println("-------");
+            if(isDistinct){
+                count++;
+            }
+//          -------------------------
             if(index >= chars.length){
                 break;
             }
@@ -186,7 +202,7 @@ public class ScratchWork {
 //        }
 //----------------------------------------------------------------------
 
-        distinct("hellooo");
+        System.out.println(distinct("hellooo"));
 
 
     }
