@@ -202,7 +202,7 @@ public class ScratchWork {
 //        }
 //----------------------------------------------------------------------
 
-        System.out.println(distinct("hellooo"));
+        System.out.println(distinct("hellotl"));
 
 
     }
