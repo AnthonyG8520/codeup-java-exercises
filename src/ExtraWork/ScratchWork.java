@@ -128,9 +128,9 @@ public class ScratchWork {
 
     public static int distinct(String s){
         int count = 0;
-//        String[] chars = new String[s.length()];
         Character[] pairs = new Character[3];
         char[] chars = s.toCharArray();
+//      loop for splitting into arrays of 3 characters
         for(int i = 0; i < chars.length; i++){
             int index = i;
             for(int x = 0; x < 3; x++){
@@ -143,6 +143,8 @@ public class ScratchWork {
                 }
 
             }
+//      ---------------------------------------------
+
 //          add code for checking for repeated characters here
             boolean isDistinct = false;
             for(int c = 0; c < 3; c++){
@@ -202,7 +204,7 @@ public class ScratchWork {
 //        }
 //----------------------------------------------------------------------
 
-        System.out.println(distinct("hellotl"));
+//        System.out.println(distinct("hellotl"));
 
 
     }
