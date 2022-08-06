@@ -141,10 +141,8 @@ public class ScratchWork {
                 else{
                     break;
                 }
-
             }
 //      ---------------------------------------------
-
 //          add code for checking for repeated characters here
             boolean isDistinct = false;
             for(int c = 0; c < 3; c++){
@@ -163,13 +161,11 @@ public class ScratchWork {
             if(isDistinct){
                 count++;
             }
-//          -------------------------
-            if(index >= chars.length){
+            else if(index >= chars.length){
                 break;
             }
+//          -------------------------
         }
-
-
         return count;
     }
 
@@ -204,7 +200,7 @@ public class ScratchWork {
 //        }
 //----------------------------------------------------------------------
 
-//        System.out.println(distinct("hellotl"));
+        System.out.println(distinct("hellotl"));
 
 
     }
