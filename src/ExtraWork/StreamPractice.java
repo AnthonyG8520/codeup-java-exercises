@@ -12,5 +12,7 @@ public class StreamPractice {
 
         names.stream().forEach(n -> System.out.println(n));
 
+        Stream<String> namesWithA = names.stream().filter(n -> n.contains("a"));
+        
     }
 }
