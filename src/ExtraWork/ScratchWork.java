@@ -1,5 +1,6 @@
 package ExtraWork;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -239,24 +240,40 @@ public class ScratchWork {
 //        return firstHalf + " " + secondHalf;
 //    }
 
+//    public static String breakCamelCase(String str){
+//        ArrayList<Integer> breakPoints = new ArrayList<>();
+//        String newStr = "";
+//
+//        for(int i = 0; i <= str.length() - 1; i++){
+//            String currentChar = str.substring(i, i+1);
+//            if(currentChar.equals(currentChar.toUpperCase())){
+//                breakPoints.add(i);
+//            }
+//        }
+//
+//        for(int x = 0; x <= breakPoints.size(); x++){
+//            if(breakPoints.get(x + 1) == null){
+//                newStr += str.substring(breakPoints.get(x));
+//            }
+//            else if(breakPoints.get(x + 1) != null){
+//                newStr += str.substring(0, breakPoints.get(x)) + " ";
+//            }
+//        }
+//
+//
+//        return newStr;
+//    }
+
     public static String breakCamelCase(String str){
-        ArrayList<Integer> breakPoints = new ArrayList<>();
         String newStr = "";
-
         for(int i = 0; i <= str.length() - 1; i++){
-            String currentChar = str.substring(i, i+1);
+        String currentChar = str.substring(i, i+1);
             if(currentChar.equals(currentChar.toUpperCase())){
-                breakPoints.add(i);
+                newStr += " ";
+                newStr += currentChar;
+                continue;
             }
-        }
-
-        for(int x = 0; x <= breakPoints.size(); x++){
-            if(breakPoints.get(x + 1) == null){
-                newStr += str.substring(breakPoints.get(x));
-            }
-            else if(breakPoints.get(x + 1) != null){
-                newStr += str.substring(0, breakPoints.get(x)) + " ";
-            }
+            newStr += currentChar;
         }
 
 
@@ -300,8 +317,7 @@ public class ScratchWork {
 //        System.out.println(findMissingInt(nums));
 
 
-//        System.out.println(breakCamelCase("helloWorldThere"));
-
+        System.out.println(breakCamelCase("helloWorldThere"));
 
     }
 }
