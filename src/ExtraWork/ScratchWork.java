@@ -224,6 +224,22 @@ public class ScratchWork {
         }
     }
 
+    public static String splitAtUpperCase(String str){
+        for(int i = 0; i < str.length(); i++){
+            int indexOfSecondWord = 0;
+            String currentChar = str.substring(i, i+1);
+            if(currentChar.equals(currentChar.toUpperCase())){
+
+            }
+        }
+
+
+        String secondHalf = str.substring();
+
+
+        return str;
+    }
+
 
     public static void main(String[] args) {
 
@@ -259,6 +275,13 @@ public class ScratchWork {
 
 
 //        System.out.println(findMissingInt(nums));
+
+        String str = "hello";
+
+        String newStr = str.substring(0,1);
+
+        System.out.println(newStr.equals(newStr.toUpperCase()));
+
 
     }
 }
