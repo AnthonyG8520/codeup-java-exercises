@@ -224,19 +224,43 @@ public class ScratchWork {
         }
     }
 
-    public static String splitAtUpperCase(String str){
-        int indexOfSecondWord = 0;
-        for(int i = 0; i < str.length(); i++){
+//    public static String breakCamelCase(String str){
+//        int indexOfSecondWord = 0;
+//        for(int i = 0; i < str.length(); i++){
+//            String currentChar = str.substring(i, i+1);
+//            if(currentChar.equals(currentChar.toUpperCase())){
+//                indexOfSecondWord = i;
+//                break;
+//            }
+//        }
+//        String firstHalf = str.substring(0, indexOfSecondWord);
+//        String secondHalf = str.substring(indexOfSecondWord);
+//
+//        return firstHalf + " " + secondHalf;
+//    }
+
+    public static String breakCamelCase(String str){
+        ArrayList<Integer> breakPoints = new ArrayList<>();
+        String newStr = "";
+
+        for(int i = 0; i <= str.length() - 1; i++){
             String currentChar = str.substring(i, i+1);
             if(currentChar.equals(currentChar.toUpperCase())){
-                indexOfSecondWord = i;
-                break;
+                breakPoints.add(i);
             }
         }
-        String firstHalf = str.substring(0, indexOfSecondWord);
-        String secondHalf = str.substring(indexOfSecondWord);
 
-        return firstHalf + " " + secondHalf;
+        for(int x = 0; x <= breakPoints.size(); x++){
+            if(breakPoints.get(x + 1) == null){
+                newStr += str.substring(breakPoints.get(x));
+            }
+            else if(breakPoints.get(x + 1) != null){
+                newStr += str.substring(0, breakPoints.get(x)) + " ";
+            }
+        }
+
+
+        return newStr;
     }
 
 
@@ -276,7 +300,7 @@ public class ScratchWork {
 //        System.out.println(findMissingInt(nums));
 
 
-        System.out.println(splitAtUpperCase("helloWorld"));
+//        System.out.println(breakCamelCase("helloWorldThere"));
 
 
     }
