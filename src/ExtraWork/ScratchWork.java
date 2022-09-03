@@ -241,6 +241,26 @@ public class ScratchWork {
         return newStr;
     }
 
+    public static void sumParts(ArrayList<Integer> nums){
+        int listSize = nums.size();
+        ArrayList<Integer> sumArr = new ArrayList<>();
+
+        for(int i = 0; i <= listSize - 1; i++){
+            int sum = 0;
+            for(int num : nums){
+                sum += num;
+            }
+            sumArr.add(sum);
+            nums.remove(0);
+        }
+
+        if(nums.isEmpty()){
+            sumArr.add(0);
+        }
+
+        System.out.println(sumArr);
+    }
+
 
     public static void main(String[] args) {
 
@@ -277,5 +297,9 @@ public class ScratchWork {
 
 //        System.out.println(breakCamelCase("helloWorldThere"));
 
+//        ------------------------------------------------------------------------
+//        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(0,1,3,6,10));
+//        sumParts(nums);
+//        ----------------------------------------------------------------------------
     }
 }
