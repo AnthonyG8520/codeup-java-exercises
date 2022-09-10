@@ -261,6 +261,27 @@ public class ScratchWork {
         System.out.println(sumArr);
     }
 
+    public static String readableTime(int seconds){
+        String hours = Integer.toString(seconds / 3600);
+        seconds = seconds % 3600;
+
+        String minutes = Integer.toString(seconds / 60);
+
+        String remainingSeconds = Integer.toString(seconds % 60);
+
+        if(parseInt(hours) < 10){
+            hours = "0" + hours;
+        }
+        if(parseInt(minutes) < 10){
+            minutes = "0" + minutes;
+        }
+        if(parseInt(remainingSeconds) < 10){
+            remainingSeconds = "0" + remainingSeconds;
+        }
+
+        return hours + ":" + minutes + ":" + remainingSeconds;
+    }
+
 
     public static void main(String[] args) {
 
@@ -301,5 +322,8 @@ public class ScratchWork {
 //        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(0,1,3,6,10));
 //        sumParts(nums);
 //        ----------------------------------------------------------------------------
+
+//        System.out.println(readableTime(359999));
+
     }
 }
