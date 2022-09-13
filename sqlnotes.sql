@@ -63,6 +63,12 @@ SELECT columns
 FROM table_a as A
 JOIN table_b as B ON A.id = B.fk_id;
 
+For WINDOWS:
+to run an sql file from within a running mysql instance use keyword 'source'
+if script has embedded files that are in the same directory they must also have the full path specified (as shown below)
+mysql> source /Users/nsebhastian/Desktop/test/main.sql
+
+
 
 
 
