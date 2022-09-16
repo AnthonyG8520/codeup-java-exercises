@@ -283,6 +283,75 @@ public class ScratchWork {
     }
 
 
+    // problem from smoothstack coding challenge
+    //need work
+    public static int eval_algebraic(String expr, int val) {
+        int finalVal = 0;
+        expr = expr.replaceAll("\\s", "");
+        String [] exp = null;
+
+        if(expr.contains("+")){
+            exp = expr.split("\\+");
+            if(exp[0].startsWith("x") || exp[1].startsWith("x")){
+                finalVal = -1;
+            }
+
+            if(exp[0].equals("x")){
+                int firstVal = val;
+                int secondVal = Integer.parseInt(exp[1]);
+                finalVal = firstVal + secondVal;
+            }
+            else if(exp[1].equals("x")){
+                int firstVal = Integer.parseInt(exp[0]);
+                int secondVal = val;
+                finalVal = firstVal + secondVal;
+            }
+            else if(exp[0].endsWith("x")){
+                String num = exp[0].replaceAll("x", "");
+                int firstVal = Integer.parseInt(num) * val;
+                int secondVal = Integer.parseInt(exp[1]);
+                finalVal = firstVal + secondVal;
+            }
+            else if(exp[1].endsWith("x")){
+                String num = exp[1].replaceAll("x", "");
+                int firstVal = Integer.parseInt(num) * val;
+                int secondVal = Integer.parseInt(exp[0]);
+                finalVal = firstVal + secondVal;
+            }
+        }
+        else if(expr.contains("-")){
+            exp = expr.split("-");
+            if(exp[0].startsWith("x") || exp[1].startsWith("x")){
+                finalVal = -1;
+            }
+            if(exp[0].equals("x")){
+                int firstVal = val;
+                int secondVal = Integer.parseInt(exp[1]);
+                finalVal = firstVal - secondVal;
+            }
+            else if(exp[1].equals("x")){
+                int firstVal = Integer.parseInt(exp[0]);
+                int secondVal = val;
+                finalVal = firstVal - secondVal;
+            }
+            else if(exp[0].endsWith("x")){
+                String num = exp[0].replaceAll("x", "");
+                int firstVal = Integer.parseInt(num) * val;
+                int secondVal = Integer.parseInt(exp[1]);
+                finalVal = firstVal - secondVal;
+            }
+            else if(exp[1].endsWith("x")){
+                String num = exp[1].replaceAll("x", "");
+                int firstVal = Integer.parseInt(num) * val;
+                int secondVal = Integer.parseInt(exp[0]);
+                finalVal = firstVal - secondVal;
+            }
+        }
+
+        return finalVal;
+    }
+
+
     public static void main(String[] args) {
 
 //        fizzBuzz();
@@ -325,5 +394,7 @@ public class ScratchWork {
 
 //        System.out.println(readableTime(359999));
 
+
+        System.out.println(eval_algebraic("3 - x", 2));
     }
 }
