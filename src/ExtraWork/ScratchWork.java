@@ -284,7 +284,7 @@ public class ScratchWork {
 
 
     // problem from smoothstack coding challenge
-    //need work
+    //needs work
     public static int eval_algebraic(String expr, int val) {
         int finalVal = 0;
         expr = expr.replaceAll("\\s", "");
@@ -395,6 +395,6 @@ public class ScratchWork {
 //        System.out.println(readableTime(359999));
 
 
-        System.out.println(eval_algebraic("3 - x", 2));
+//        System.out.println(eval_algebraic("3 - x", 2));
     }
 }
