@@ -351,22 +351,40 @@ public class ScratchWork {
         return finalVal;
     }
 
+
+//  Check if can use letters in first string to create second string (take into consideration amount of each character)
     public static boolean containsSameLetters(String str1, String str2){
         boolean answer = true;
-        String[] firstStr = str1.split("");
-        String[] secondStr = str2.split("");
+        String[] arr1 = str1.split("");
+        String[] arr2 = str2.split("");
+        ArrayList<String> firstStr = new ArrayList<>(Arrays.asList(arr1));
+        ArrayList<String> secondStr = new ArrayList<>(Arrays.asList(arr2));
 
-        for(String ch : secondStr){
-            if(str1.contains(ch)){
+
+        for(int i = 0; i < secondStr.size() - 1; i++){
+            if(firstStr.contains(secondStr.get(i))){
                 answer = true;
+                firstStr.remove(secondStr.get(i));
             }else{
                 answer = false;
+                break;
             }
         }
 
 
         return answer;
     }
+
+//  Another solution for the above problem
+//    public static boolean containsSameLetters(String str1, String str2) {
+//        if (str2.length() > str1.length()) return false;
+//        for (String s: str2.split("")) {
+//            if (!str1.contains(s))  return false;
+//            str1 = str1.replaceFirst(s,"");
+//        }
+//
+//        return true;
+//    }
 
 
     public static void main(String[] args) {
@@ -414,7 +432,7 @@ public class ScratchWork {
 
 //        System.out.println(eval_algebraic("3 - x", 2));
 
-        System.out.println(containsSameLetters("hello", "olkehl"));
+//        System.out.println(containsSameLetters("katas", "steak"));
 
     }
 }
