@@ -352,11 +352,20 @@ public class ScratchWork {
     }
 
     public static boolean containsSameLetters(String str1, String str2){
+        boolean answer = true;
         String[] firstStr = str1.split("");
         String[] secondStr = str2.split("");
-        Arrays.sort(firstStr);
-        Arrays.sort(secondStr);
-        return Arrays.equals(firstStr, secondStr);
+
+        for(String ch : secondStr){
+            if(str1.contains(ch)){
+                answer = true;
+            }else{
+                answer = false;
+            }
+        }
+
+
+        return answer;
     }
 
 
