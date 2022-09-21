@@ -351,6 +351,14 @@ public class ScratchWork {
         return finalVal;
     }
 
+    public static boolean containsSameLetters(String str1, String str2){
+        boolean answer = false;
+        Character[] chars
+
+
+        return answer;
+    }
+
 
     public static void main(String[] args) {
 
