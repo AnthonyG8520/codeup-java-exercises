@@ -352,11 +352,11 @@ public class ScratchWork {
     }
 
     public static boolean containsSameLetters(String str1, String str2){
-        boolean answer = false;
-        Character[] chars
-
-
-        return answer;
+        String[] firstStr = str1.split("");
+        String[] secondStr = str2.split("");
+        Arrays.sort(firstStr);
+        Arrays.sort(secondStr);
+        return Arrays.equals(firstStr, secondStr);
     }
 
 
@@ -404,5 +404,8 @@ public class ScratchWork {
 
 
 //        System.out.println(eval_algebraic("3 - x", 2));
+
+        System.out.println(containsSameLetters("hello", "olkehl"));
+
     }
 }
