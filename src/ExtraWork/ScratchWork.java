@@ -371,7 +371,6 @@ public class ScratchWork {
             }
         }
 
-
         return answer;
     }
 
@@ -385,6 +384,24 @@ public class ScratchWork {
 //
 //        return true;
 //    }
+
+    public static String pigLatin(String str){
+        String newStr = "";
+        String punctToAdd = "";
+
+        if(str.substring(str.length() - 1).matches("[!|?|.]")){
+            punctToAdd = str.substring(str.length() - 1);
+            str = str.substring(0, str.length() - 1);
+        }
+
+        String[] words = str.split(" ");
+
+        for(String word : words){
+            String newWord = word.substring(1) + word.charAt(0) + "ay";
+            newStr += newWord + " ";
+        }
+        return newStr.trim() + punctToAdd;
+    }
 
 
     public static void main(String[] args) {
@@ -433,6 +450,8 @@ public class ScratchWork {
 //        System.out.println(eval_algebraic("3 - x", 2));
 
 //        System.out.println(containsSameLetters("katas", "steak"));
+
+        System.out.println(pigLatin("Pig latin is cool"));
 
     }
 }
