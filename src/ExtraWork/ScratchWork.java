@@ -403,6 +403,11 @@ public class ScratchWork {
         return newStr.trim() + punctToAdd;
     }
 
+//  regex solution for above problem
+//    public static String pigLatin(String str){
+//        return str.replaceAll("(\\w)(\\w*)", "$2$1ay");
+//    }
+
 
     public static void main(String[] args) {
 
@@ -451,7 +456,7 @@ public class ScratchWork {
 
 //        System.out.println(containsSameLetters("katas", "steak"));
 
-        System.out.println(pigLatin("Pig latin is cool"));
+//        System.out.println(pigLatin("Pig latin is cool"));
 
     }
 }
