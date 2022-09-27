@@ -408,6 +408,16 @@ public class ScratchWork {
 //        return str.replaceAll("(\\w)(\\w*)", "$2$1ay");
 //    }
 
+    public static int persistence(int n){
+        int count = 0;
+
+
+
+
+
+        return count;
+    }
+
 
     public static void main(String[] args) {
 
