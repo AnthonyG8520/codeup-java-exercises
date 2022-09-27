@@ -478,6 +478,14 @@ public class ScratchWork {
             System.out.println(x);
         }
 
+        String nums = "899";
+
+        numArr = new ArrayList<>(List.of(nums.split("")));
+
+        for(String x : numArr){
+            System.out.println(x);
+        }
+
 
     }
 }
