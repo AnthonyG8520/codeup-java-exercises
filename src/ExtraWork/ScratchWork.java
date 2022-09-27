@@ -410,7 +410,8 @@ public class ScratchWork {
 
     public static int persistence(int n){
         int count = 0;
-
+        String number = String.valueOf(n);
+        ArrayList <String> numArr = new ArrayList<>(List.of(number.split("")));
 
 
 
@@ -467,6 +468,16 @@ public class ScratchWork {
 //        System.out.println(containsSameLetters("katas", "steak"));
 
 //        System.out.println(pigLatin("Pig latin is cool"));
+
+        int n = 99;
+        String num = String.valueOf(n);
+
+        ArrayList<String> numArr = new ArrayList<>(List.of(num.split("")));
+
+        for(String x : numArr){
+            System.out.println(x);
+        }
+
 
     }
 }
