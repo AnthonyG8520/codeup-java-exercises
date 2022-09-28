@@ -412,9 +412,22 @@ public class ScratchWork {
         int count = 0;
         String number = String.valueOf(n);
         ArrayList <String> numArr = new ArrayList<>(List.of(number.split("")));
+        int result = parseInt(numArr.get(0));
 
-
-
+        for(int i = 0; i <= numArr.size(); i++){
+            if(i+1 <= numArr.size() - 1){
+                result *= parseInt(numArr.get(i+1));
+            }
+            if(i == numArr.size() - 1 && String.valueOf(result).length() != 1){
+                numArr = new ArrayList<>(List.of(String.valueOf(result).split("")));
+                result = parseInt(numArr.get(0));
+                count++;
+                i = 0;
+            }else if(i == numArr.size() - 1 && String.valueOf(result).length() == 1){
+                count++;
+                break;
+            }
+        }
 
         return count;
     }
@@ -469,22 +482,28 @@ public class ScratchWork {
 
 //        System.out.println(pigLatin("Pig latin is cool"));
 
-        int n = 99;
-        String num = String.valueOf(n);
+        System.out.println(persistence(39));
 
-        ArrayList<String> numArr = new ArrayList<>(List.of(num.split("")));
-
-        for(String x : numArr){
-            System.out.println(x);
-        }
-
-        String nums = "899";
-
-        numArr = new ArrayList<>(List.of(nums.split("")));
-
-        for(String x : numArr){
-            System.out.println(x);
-        }
+//        int n = 99;
+//        String num = String.valueOf(n);
+//
+//        ArrayList<String> numArr = new ArrayList<>(List.of(num.split("")));
+//
+//        int t = parseInt(numArr.get(0));
+//
+//        System.out.println("t = " + t);
+//
+//        for(String x : numArr){
+//            System.out.println(x);
+//        }
+//
+//        String nums = "899";
+//
+//        numArr = new ArrayList<>(List.of(nums.split("")));
+//
+//        for(String x : numArr){
+//            System.out.println(x);
+//        }
 
 
     }
