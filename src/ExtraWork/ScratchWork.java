@@ -385,6 +385,7 @@ public class ScratchWork {
 //        return true;
 //    }
 
+
     public static String pigLatin(String str){
         String newStr = "";
         String punctToAdd = "";
@@ -408,11 +409,17 @@ public class ScratchWork {
 //        return str.replaceAll("(\\w)(\\w*)", "$2$1ay");
 //    }
 
+
+    // my solution
     public static int persistence(int n){
         int count = 0;
         String number = String.valueOf(n);
         ArrayList <String> numArr = new ArrayList<>(List.of(number.split("")));
         int result = parseInt(numArr.get(0));
+
+        if(number.length() == 1){
+            return 0;
+        }
 
         for(int i = 0; i <= numArr.size(); i++){
             if(i+1 <= numArr.size() - 1){
@@ -422,7 +429,7 @@ public class ScratchWork {
                 numArr = new ArrayList<>(List.of(String.valueOf(result).split("")));
                 result = parseInt(numArr.get(0));
                 count++;
-                i = 0;
+                i = -1;
             }else if(i == numArr.size() - 1 && String.valueOf(result).length() == 1){
                 count++;
                 break;
@@ -432,8 +439,26 @@ public class ScratchWork {
         return count;
     }
 
+    //Another users solution to above problem(doesn't make sense yet)
+//    public static int persistence(long n) {
+//        int i = 0;
+//
+//        while(n >= 10) {
+//            int m = 1;
+//
+//            while (n > 0) {
+//                m *= (n % 10);
+//                n /= 10;
+//            }
+//            n = m;
+//            i += 1;
+//        }
+//        return i;
+//    }
 
-    public static void main(String[] args) {
+
+
+        public static void main(String[] args) {
 
 //        fizzBuzz();
 //
@@ -482,7 +507,7 @@ public class ScratchWork {
 
 //        System.out.println(pigLatin("Pig latin is cool"));
 
-        System.out.println(persistence(39));
+//        System.out.println(persistence(25));
 
 //        int n = 99;
 //        String num = String.valueOf(n);
