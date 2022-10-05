@@ -457,6 +457,21 @@ public class ScratchWork {
 //    }
 
 
+    public static String encode(String word){
+        String wordToCheck = word.toLowerCase();
+        String newStr = "";
+        for(int i = 0; i < word.length(); i++){
+            int count = word.length() - wordToCheck.replaceAll(String.valueOf(wordToCheck.charAt(i)), "").length();
+            if(count > 1){
+                newStr += ")";
+            }
+            else{
+                newStr += "(";
+            }
+        }
+        return newStr;
+    }
+
 
         public static void main(String[] args) {
 
@@ -529,7 +544,9 @@ public class ScratchWork {
 //        for(String x : numArr){
 //            System.out.println(x);
 //        }
+//
+//        System.out.println(encode("Prespecialized"));
 
 
-    }
+        }
 }
