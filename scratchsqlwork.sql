@@ -12,7 +12,8 @@ create table classes(
 
 
 insert into classes(subject, crn, class, start_time, end_time, online_only, day, teacher)
-values ('Art','21664','Ceramics(non art)','16:00:00','18:45:00', 'false', 'MW','Mary Wuest'),
+values ('Art', '21665', 'Ceramics(non art)', '12:00:00', '14:45:00', 'false', 'MW', 'Mary Wuest')
+       ('Art','21664','Ceramics(non art)','16:00:00','18:45:00', 'false', 'MW','Mary Wuest'),
        ('Art','22311','Ceramics(non art)','08:00:00','10:45:00', 'false', 'TT','Audrey LeGalley'),
        ('Art','21711','Ceramics(non art)','12:00:00','14:45:00', 'false','TT', 'N/A'),
        ('Art','21690','Photography Int.','16:00:00','18:45:00', 'false','MW', 'N/A'),
@@ -31,14 +32,68 @@ values ('Art','21664','Ceramics(non art)','16:00:00','18:45:00', 'false', 'MW','
 
 
 
-trying to select all that are not in the list of the subquery
 
-the subquery when ran by itself return 5 rows
-and the outer query without the AND clause returns 6 rows
+
+SELECT * FROM classes WHERE day = 'TT';
++----+-------------+-------+-----------------------------+------------+----------+-------------+------+-----------------+
+| id | subject     | crn   | class                       | start_time | end_time | online_only | day  | teacher         |
++----+-------------+-------+-----------------------------+------------+----------+-------------+------+-----------------+
+| 21 | Art         | 22311 | Ceramics(non art)           | 08:00:00   | 10:45:00 | false       | TT   | Audrey LeGalley |
+| 22 | Art         | 21711 | Ceramics(non art)           | 12:00:00   | 14:45:00 | false       | TT   | N/A             |
+| 24 | Art History | 21629 | Contemporary Art            | 10:00:00   | 11:15:00 | false       | TT   | Kristy Masten   |
+| 26 | Art History | 21720 | TAHC: Art Of The Andes      | 08:00:00   | 09:15:00 | false       | TT   | Juliet Wiersema |
+| 29 | Art History | 21718 | TAHC: Japanese Art Material | 13:00:00   | 14:15:00 | false       | TT   | Edit Toth       |
+| 32 | Classics    | 15782 | Mythology                   | 11:30:00   | 12:45:00 | false       | TT   | N/A             |
++----+-------------+-------+-----------------------------+------------+----------+-------------+------+-----------------+
+6 rows in set (0.00 sec)
+
+SELECT * FROM classes WHERE day = 'TT' GROUP BY start_time;
++----+-------------+-------+-----------------------------+------------+----------+-------------+------+-----------------+
+| id | subject     | crn   | class                       | start_time | end_time | online_only | day  | teacher         |
++----+-------------+-------+-----------------------------+------------+----------+-------------+------+-----------------+
+| 21 | Art         | 22311 | Ceramics(non art)           | 08:00:00   | 10:45:00 | false       | TT   | Audrey LeGalley |
+| 22 | Art         | 21711 | Ceramics(non art)           | 12:00:00   | 14:45:00 | false       | TT   | N/A             |
+| 24 | Art History | 21629 | Contemporary Art            | 10:00:00   | 11:15:00 | false       | TT   | Kristy Masten   |
+| 29 | Art History | 21718 | TAHC: Japanese Art Material | 13:00:00   | 14:15:00 | false       | TT   | Edit Toth       |
+| 32 | Classics    | 15782 | Mythology                   | 11:30:00   | 12:45:00 | false       | TT   | N/A             |
++----+-------------+-------+-----------------------------+------------+----------+-------------+------+-----------------+
+5 rows in set (0.00 sec)
+
+trying to select row with id(26)
+
+trying to select all that are NOT in the list of the subquery(the above list)
+
+----------------------------------------------------------------------------
+the subquery when ran by itself return 5 rows(shown above)
+and the outer query without the AND clause returns 6 rows(first table shown above)
 entire query return 0 rows currently
 
+        SELECT * FROM classes WHERE day = 'TT' AND id NOT IN (
+            SELECT id FROM classes
+            WHERE day = 'TT'
+            GROUP BY start_time
+            );
+        THIS DOES NOT WORK^^^^
+----------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------------
 SELECT * FROM classes WHERE day = 'TT' AND id NOT IN (
+    SELECT id FROM (
     SELECT id FROM classes
     WHERE day = 'TT'
-    GROUP BY start_time
+    GROUP BY start_time) AS t2
     );
+THIS ONE WORKS^^
++----+-------------+-------+------------------------+------------+----------+-------------+------+-----------------+
+| id | subject     | crn   | class                  | start_time | end_time | online_only | day  | teacher         |
++----+-------------+-------+------------------------+------------+----------+-------------+------+-----------------+
+| 26 | Art History | 21720 | TAHC: Art Of The Andes | 08:00:00   | 09:15:00 | false       | TT   | Juliet Wiersema |
++----+-------------+-------+------------------------+------------+----------+-------------+------+-----------------+
+1 row in set (0.00 sec)
+
+using the group by clause in a subquery would not work unless
+i put it inside the FROM section of the first subquery and
+used the FROM section to make another query and give it a table alias(the query for the list of ids with distinct start_times)
+------------------------------------------------------------------------------------------------------------------------------------
