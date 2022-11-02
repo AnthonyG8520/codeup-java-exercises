@@ -81,9 +81,10 @@ entire query return 0 rows currently
 ---------------------------------------------------------------------------------------------
 SELECT * FROM classes WHERE day = 'TT' AND id NOT IN (
     SELECT id FROM (
-    SELECT id FROM classes
-    WHERE day = 'TT'
-    GROUP BY start_time) AS t2
+        SELECT id FROM classes
+        WHERE day = 'TT'
+        GROUP BY start_time
+        ) AS t2
     );
 THIS ONE WORKS^^
 +----+-------------+-------+------------------------+------------+----------+-------------+------+-----------------+
