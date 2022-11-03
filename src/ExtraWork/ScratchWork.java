@@ -473,42 +473,22 @@ public class ScratchWork {
     }
 
     public static int romanToInt(String str){
+        ArrayList<String> arrOfNumerals = new ArrayList<>(Arrays.asList("CM","CD","XC","XL","IX","IV","M","D","C","L","X","V","I"));
+        ArrayList<Integer> arrOfVals = new ArrayList<>(Arrays.asList(900,400,90,40,9,4,1000,500,100,50,10,5,1));
         int amtOfLetters = 0;
         int number = 0;
-        if(str.contains("M")){
-            amtOfLetters = str.length() - str.replaceAll("M","").length();
-            number += 1000 * amtOfLetters;
-            str = str.replaceAll("M","");
-        }
-        if(str.contains("D")){
-            amtOfLetters = str.length() - str.replaceAll("D", "").length();
-            number += 500 * amtOfLetters;
-            str = str.replaceAll("D", "");
-        }
-        if(str.contains("C")){
-            amtOfLetters = str.length() - str.replaceAll("C", "").length();
-            number += 100 * amtOfLetters;
-            str = str.replaceAll("C", "");
-        }
-        if(str.contains("L")){
-            amtOfLetters = str.length() - str.replaceAll("L", "").length();
-            number += 50 * amtOfLetters;
-            str = str.replaceAll("L", "");
-        }
-        if(str.contains("X")){
-            amtOfLetters = str.length() - str.replaceAll("X", "").length();
-            number += 10 * amtOfLetters;
-            str = str.replaceAll("X", "");
-        }
-        if(str.contains("V")){
-            amtOfLetters = str.length() - str.replaceAll("V", "").length();
-            number += 5 * amtOfLetters;
-            str = str.replaceAll("V", "");
-        }
-        if(str.contains("I")){
-            amtOfLetters = str.length() - str.replaceAll("I", "").length();
-            number += 1 * amtOfLetters;
-            str = str.replaceAll("I", "");
+
+        for(int i = 0; i < arrOfNumerals.size(); i++){
+            String numeralToCheck = arrOfNumerals.get(i);
+            if(str.contains(numeralToCheck) && numeralToCheck.length() == 1){
+                amtOfLetters = str.length() - str.replaceAll(numeralToCheck,"").length();
+                number += arrOfVals.get(i) * amtOfLetters;
+                str = str.replaceAll(numeralToCheck, "");
+            }
+            else if(str.contains(numeralToCheck) && numeralToCheck.length() == 2){
+                number += arrOfVals.get(i);
+                str = str.replaceAll(numeralToCheck, "");
+            }
         }
         return number;
     }
@@ -588,7 +568,7 @@ public class ScratchWork {
 //
 //        System.out.println(encode("Prespecialized"));
 
-            System.out.println(romanToInt("XIV"));
+            System.out.println(romanToInt("LVIII"));
 
 
         }
