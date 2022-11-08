@@ -1,8 +1,10 @@
 package ExtraWork;
 
+import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
@@ -493,6 +495,18 @@ public class ScratchWork {
         return number;
     }
 
+    public static boolean isPalindrome(String str){
+        String[] arr = str.split("");
+        Collections.reverse(Arrays.asList(arr));
+        String reversed = String.join("", arr);
+
+        if(str.equals(reversed)){
+            return true;
+        }
+
+        return false;
+    }
+
 
         public static void main(String[] args) {
 
@@ -568,8 +582,10 @@ public class ScratchWork {
 //
 //        System.out.println(encode("Prespecialized"));
 
-//            System.out.println(romanToInt("LVIII"));
+//        System.out.println(romanToInt("LVIII"));
 
+
+//        System.out.println(isPalindrome("1221"));
 
         }
 }
