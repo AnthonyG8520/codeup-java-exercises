@@ -507,6 +507,22 @@ public class ScratchWork {
         return false;
     }
 
+    public static int numberOfSteps(int num){
+        int count = 0;
+
+        while(num > 0){
+            if(num % 2 == 0){
+                num /= 2;
+                count++;
+                continue;
+            }
+            num -= 1;
+            count++;
+        }
+
+        return count;
+    }
+
 
         public static void main(String[] args) {
 
@@ -584,8 +600,9 @@ public class ScratchWork {
 
 //        System.out.println(romanToInt("LVIII"));
 
-
 //        System.out.println(isPalindrome("1221"));
+
+//            System.out.println(numberOfSteps(1563465433));
 
         }
 }
