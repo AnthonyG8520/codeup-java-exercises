@@ -602,7 +602,7 @@ public class ScratchWork {
 
 //        System.out.println(isPalindrome("1221"));
 
-//            System.out.println(numberOfSteps(1563465433));
+//        System.out.println(numberOfSteps(1563465433));
 
         }
 }
