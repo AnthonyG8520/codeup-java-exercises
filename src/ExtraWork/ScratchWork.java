@@ -523,6 +523,23 @@ public class ScratchWork {
         return count;
     }
 
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2){
+        //worked for most test cases
+        double median = 0;
+        double total = 0;
+
+        for(int x : nums1){
+            total += x;
+        }
+        for(int x : nums2){
+            total += x;
+        }
+
+        median = total / (nums1.length + nums2.length);
+
+        return median;
+    }
+
 
         public static void main(String[] args) {
 
@@ -603,6 +620,8 @@ public class ScratchWork {
 //        System.out.println(isPalindrome("1221"));
 
 //        System.out.println(numberOfSteps(1563465433));
+
+//            System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2,7}));
 
         }
 }
