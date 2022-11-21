@@ -540,6 +540,26 @@ public class ScratchWork {
         return median;
     }
 
+    public static int addDigits(int num){
+        String[] arr = String.valueOf(num).split("");
+        int length = Integer.toString(num).length();
+        int newNum = 0;
+
+        while(length > 1){
+            for(int i = 0; i < arr.length; i++){
+                newNum += parseInt(arr[i]);
+            }
+            if(Integer.toString(newNum).length() == 1){
+                break;
+            }
+            arr = String.valueOf(newNum).split("");
+            length = Integer.toString(newNum).length();
+            newNum = 0;
+        }
+
+        return newNum;
+    }
+
 
         public static void main(String[] args) {
 
@@ -621,7 +641,9 @@ public class ScratchWork {
 
 //        System.out.println(numberOfSteps(1563465433));
 
-//            System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2,7}));
+//        System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2,7}));
+
+            System.out.println(addDigits(11));
 
         }
 }
