@@ -643,7 +643,7 @@ public class ScratchWork {
 
 //        System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2,7}));
 
-            System.out.println(addDigits(11));
+//        System.out.println(addDigits(11));
 
         }
 }
