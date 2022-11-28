@@ -159,5 +159,48 @@ Output:
 
 SELECT name AS Customers FROM Customers WHERE id NOT IN (SELECT customerId FROM Orders);
 
+
+
+Write an SQL query to report the second highest salary from the Employee table. If there is no second highest salary, the query should report null.
+
+Input:
+Employee table:
++----+--------+
+| id | salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+Output:
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+
+Input:
+Employee table:
++----+--------+
+| id | salary |
++----+--------+
+| 1  | 100    |
++----+--------+
+Output:
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| null                |
++---------------------+
+
+SELECT IFNULL ((salary AS SecondHighestSalary FROM (
+    SELECT * FROM Employee
+    ORDER BY salary DESC
+    ) AS t1
+    LIMIT 1 OFFSET 1), "null"
+    );
+
+not working yet^^^^
+
 --------------------------------------------------------------------------------------------
 
