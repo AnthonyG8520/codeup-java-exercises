@@ -560,6 +560,18 @@ public class ScratchWork {
         return newNum;
     }
 
+    public static boolean checkIfExists(int[] arr){
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr.length; j++){
+                if(arr[i] == 2 * arr[j] && i != j){
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
 
         public static void main(String[] args) {
 
@@ -644,6 +656,8 @@ public class ScratchWork {
 //        System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2,7}));
 
 //        System.out.println(addDigits(11));
+
+            System.out.println(checkIfExists(new int[]{0,0}));
 
         }
 }
