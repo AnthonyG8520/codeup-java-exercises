@@ -213,5 +213,13 @@ SELECT IFNULL ((SELECT DISTINCT salary FROM Employee
 ^^^^this one works
 ^^^^if second value in 'IFNULL' statement has quotes then the query will wrap every line in dataset in quotes (do not know why)
 
+SELECT
+    (SELECT DISTINCT salary from Employee
+     order by salary DESC
+        LIMIT 1 OFFSET 1)
+     AS SecondHighestSalary;
+
+^^^^^^^^^^^^this works as well
+
 --------------------------------------------------------------------------------------------
 
