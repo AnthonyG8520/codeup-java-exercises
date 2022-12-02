@@ -1,3 +1,7 @@
+-- noinspection SqlDialectInspectionForFile
+
+-- noinspection SqlNoDataSourceInspectionForFile
+
 create table classes(
                         id INT UNSIGNED NOT NULL AUTO_INCREMENT,
                         subject VARCHAR(40),
@@ -193,14 +197,21 @@ Output:
 | null                |
 +---------------------+
 
-SELECT IFNULL ((salary AS SecondHighestSalary FROM (
+SELECT IFNULL (salary, 'null') AS SecondHighestSalary FROM (
     SELECT * FROM Employee
     ORDER BY salary DESC
     ) AS t1
-    LIMIT 1 OFFSET 1), "null"
-    );
+    LIMIT 1 OFFSET 1;
 
-not working yet^^^^
+not working yet^^^^ - whole dataset is wrapped in quotes
+
+SELECT IFNULL ((SELECT DISTINCT salary FROM Employee
+    ORDER BY salary DESC
+    LIMIT 1 OFFSET 1), NULL)
+    AS SecondHighestSalary;
+
+^^^^this one works
+^^^^if second value in 'IFNULL' statement has quotes then the query will wrap every line in dataset in quotes (do not know why)
 
 --------------------------------------------------------------------------------------------
 
