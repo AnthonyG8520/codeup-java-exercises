@@ -572,6 +572,13 @@ public class ScratchWork {
         return false;
     }
 
+//    public static char findTheDifference(String s, String t){
+//        char character;
+//        t = t.replaceFirst(s, "");
+//        character = t.charAt(0);
+//        return character;
+//    }
+
 
         public static void main(String[] args) {
 
@@ -657,7 +664,8 @@ public class ScratchWork {
 
 //        System.out.println(addDigits(11));
 
-            System.out.println(checkIfExists(new int[]{0,0}));
+//        System.out.println(checkIfExists(new int[]{0,0}));
 
+        System.out.println(findTheDifference("e", "ee"));
         }
 }
