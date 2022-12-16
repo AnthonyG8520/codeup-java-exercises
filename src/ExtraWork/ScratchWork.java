@@ -573,11 +573,19 @@ public class ScratchWork {
     }
 
 //    public static char findTheDifference(String s, String t){
+    // this solution does not work because it removes the first string from the second all at once instead of looping through individual characters
 //        char character;
 //        t = t.replaceFirst(s, "");
 //        character = t.charAt(0);
 //        return character;
 //    }
+
+    public static char findTheDifference(String s, String t){
+        for(char c : s.toCharArray()){
+            t = t.replaceFirst(c+"","");
+        }
+        return t.charAt(0);
+    }
 
 
         public static void main(String[] args) {
@@ -666,6 +674,7 @@ public class ScratchWork {
 
 //        System.out.println(checkIfExists(new int[]{0,0}));
 
-        System.out.println(findTheDifference("e", "ee"));
+//        System.out.println(findTheDifference("e", "ee"));
+
         }
 }
