@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static java.lang.Integer.parseInt;
 
@@ -587,6 +589,27 @@ public class ScratchWork {
         return t.charAt(0);
     }
 
+    public static int repeatedNTimes(int[] nums){
+        int repeatedNum = 0;
+        ArrayList<Integer> listOfNums = new ArrayList<>();
+        for(int num : nums){
+            listOfNums.add(num);
+        }
+
+        for(int i = 0; i <= listOfNums.size(); i++){
+            int currentNum = listOfNums.get(0);
+            listOfNums.remove(0);
+
+            if(listOfNums.contains(currentNum)){
+                repeatedNum = currentNum;
+                break;
+            }
+
+        }
+
+        return repeatedNum;
+    }
+
 
         public static void main(String[] args) {
 
@@ -675,6 +698,8 @@ public class ScratchWork {
 //        System.out.println(checkIfExists(new int[]{0,0}));
 
 //        System.out.println(findTheDifference("e", "ee"));
+
+        System.out.println(repeatedNTimes(new int[]{8,3,2,3}));
 
         }
 }
