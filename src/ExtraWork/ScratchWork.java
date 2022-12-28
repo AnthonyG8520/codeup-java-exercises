@@ -658,7 +658,7 @@ public class ScratchWork {
 
 //        System.out.println(containsSameLetters("katas", "steak"));
 
-//        System.out.println(pigLatin("Pig latin is cool"));
+//        System.out.println(pigLatin("look in the bag"));
 
 //        System.out.println(persistence(25));
 
@@ -699,7 +699,7 @@ public class ScratchWork {
 
 //        System.out.println(findTheDifference("e", "ee"));
 
-        System.out.println(repeatedNTimes(new int[]{8,3,2,3}));
+//        System.out.println(repeatedNTimes(new int[]{8,3,2,3}));
 
         }
 }
