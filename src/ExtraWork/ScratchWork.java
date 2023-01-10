@@ -2,6 +2,7 @@ package ExtraWork;
 
 import java.sql.Array;
 import java.sql.SQLOutput;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -610,6 +611,25 @@ public class ScratchWork {
         return repeatedNum;
     }
 
+    public static String daysSincePosted(String dateTime){
+        String timeRemoved = dateTime.substring(0,10);
+        String[] seperatedDate = timeRemoved.split("-");
+
+
+        LocalDate postDate = LocalDate.of(Integer.parseInt(seperatedDate[0]),Integer.parseInt(seperatedDate[1]),Integer.parseInt(seperatedDate[2]));
+
+        String daysSincePosted = postDate.until(LocalDate.now()).toString();
+
+        if(daysSincePosted.contains("Y")){
+            int index = daysSincePosted.indexOf("Y");
+            String digit = daysSincePosted.substring(index-1, index);
+            (Integer.parseInt(digit) > 1) ? (return digit + " years ago") : (return digit + " year ago");
+        }
+
+
+        return "";
+    }
+
 
         public static void main(String[] args) {
 
@@ -700,6 +720,8 @@ public class ScratchWork {
 //        System.out.println(findTheDifference("e", "ee"));
 
 //        System.out.println(repeatedNTimes(new int[]{8,3,2,3}));
+
+            System.out.println(daysSincePosted("2022-01-06 02:23:56.833680"));
 
         }
 }
