@@ -611,23 +611,28 @@ public class ScratchWork {
         return repeatedNum;
     }
 
+    //method for taking 'DateTime' object in form of string and returning how many days/months/years since the entered parameter
     public static String daysSincePosted(String dateTime){
-        String timeRemoved = dateTime.substring(0,10);
-        String[] seperatedDate = timeRemoved.split("-");
-
+        String[] seperatedDate = dateTime.substring(0,10).split("-");
 
         LocalDate postDate = LocalDate.of(Integer.parseInt(seperatedDate[0]),Integer.parseInt(seperatedDate[1]),Integer.parseInt(seperatedDate[2]));
 
         String daysSincePosted = postDate.until(LocalDate.now()).toString();
+        System.out.println(daysSincePosted);
 
         if(daysSincePosted.contains("Y")){
             int index = daysSincePosted.indexOf("Y");
             String digit = daysSincePosted.substring(index-1, index);
-            (Integer.parseInt(digit) > 1) ? (return digit + " years ago") : (return digit + " year ago");
+            return (Integer.parseInt(digit) > 1) ? (digit + " years ago") : (digit + " year ago");
+        }
+        else if(daysSincePosted.contains("M")){
+            int index = daysSincePosted.indexOf("M");
+            String digit = daysSincePosted.substring(index-1, index);
+            return (Integer.parseInt(digit) > 1) ? (digit + " months ago") : (digit + " month ago");
         }
 
-
-        return "";
+        String digit = daysSincePosted.replaceAll("[A-Z]", "");
+        return (Integer.parseInt(digit) > 1) ? (digit + " days ago") : (digit + " day ago");
     }
 
 
@@ -721,7 +726,7 @@ public class ScratchWork {
 
 //        System.out.println(repeatedNTimes(new int[]{8,3,2,3}));
 
-            System.out.println(daysSincePosted("2022-01-06 02:23:56.833680"));
+            System.out.println(daysSincePosted("2022-02-09 02:23:56.833680"));
 
         }
 }
