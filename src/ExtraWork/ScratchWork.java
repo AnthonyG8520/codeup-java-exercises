@@ -622,12 +622,12 @@ public class ScratchWork {
 
         if(daysSincePosted.contains("Y")){
             int index = daysSincePosted.indexOf("Y");
-            String digit = daysSincePosted.substring(index-1, index);
+            String digit = daysSincePosted.substring(0, index).replaceAll("[A-Z]", "");
             return (Integer.parseInt(digit) > 1) ? (digit + " years ago") : (digit + " year ago");
         }
         else if(daysSincePosted.contains("M")){
             int index = daysSincePosted.indexOf("M");
-            String digit = daysSincePosted.substring(index-1, index);
+            String digit = daysSincePosted.substring(0, index).replaceAll("[A-Z]", "");
             return (Integer.parseInt(digit) > 1) ? (digit + " months ago") : (digit + " month ago");
         }
 
@@ -726,7 +726,7 @@ public class ScratchWork {
 
 //        System.out.println(repeatedNTimes(new int[]{8,3,2,3}));
 
-            System.out.println(daysSincePosted("2022-02-09 02:23:56.833680"));
+            System.out.println(daysSincePosted("2009-06-02 02:23:56.833680"));
 
         }
 }
