@@ -3,6 +3,7 @@ package ExtraWork;
 import java.sql.Array;
 import java.sql.SQLOutput;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -611,8 +612,10 @@ public class ScratchWork {
         return repeatedNum;
     }
 
-    //method for taking 'DateTime' object in form of string and returning how many days/months/years since the entered parameter
-    public static String daysSincePosted(String dateTime){
+    //method for taking 'LocalDateTime' object and returning how many days/months/years since the entered parameter
+    public static String daysSincePosted(LocalDateTime LocalDateTime){
+        String dateTime = LocalDateTime.toString();
+
         String[] seperatedDate = dateTime.substring(0,10).split("-");
 
         LocalDate postDate = LocalDate.of(Integer.parseInt(seperatedDate[0]),Integer.parseInt(seperatedDate[1]),Integer.parseInt(seperatedDate[2]));
@@ -726,7 +729,7 @@ public class ScratchWork {
 
 //        System.out.println(repeatedNTimes(new int[]{8,3,2,3}));
 
-            System.out.println(daysSincePosted("2009-06-02 02:23:56.833680"));
+//        System.out.println(daysSincePosted("2009-06-02 02:23:56.833680"));
 
         }
 }
