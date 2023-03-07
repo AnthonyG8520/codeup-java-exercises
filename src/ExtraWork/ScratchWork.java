@@ -1,15 +1,11 @@
 package ExtraWork;
 
-import java.sql.Array;
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static java.lang.Integer.parseInt;
 
@@ -638,6 +634,38 @@ public class ScratchWork {
         return (Integer.parseInt(digit) > 1) ? (digit + " days ago") : (digit + " day ago");
     }
 
+    public static boolean isCircularSentence(String sentence){
+        boolean answer = false;
+        ArrayList<String> sentenceList = new ArrayList<>(Arrays.asList(sentence.split(" ")));
+
+        if(sentenceList.size() < 2) {
+            if (sentence.startsWith(String.valueOf(sentence.charAt(sentence.length() - 1)))) {
+                return true;
+            }
+        }
+
+            for(int i = 1; i < sentenceList.size(); i++){
+                String currentWord = sentenceList.get(i);
+                String previousWord = sentenceList.get(i-1);
+
+                if(currentWord.startsWith(String.valueOf(previousWord.charAt(previousWord.length() - 1)))){
+                    answer = true;
+                }
+                else{
+                    return false;
+                }
+            }
+
+            if(sentence.startsWith(String.valueOf(sentence.charAt(sentence.length() - 1)))){
+                answer = true;
+            }
+            else{
+                answer = false;
+            }
+
+        return answer;
+    }
+
 
         public static void main(String[] args) {
 
@@ -731,5 +759,6 @@ public class ScratchWork {
 
 //        System.out.println(daysSincePosted("2009-06-02 02:23:56.833680"));
 
+//         System.out.println(isCircularSentence("Leetcode is cool"));
         }
 }
