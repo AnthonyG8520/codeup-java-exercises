@@ -666,6 +666,21 @@ public class ScratchWork {
         return answer;
     }
 
+    public static int[] arrayDiff(int[] a, int[] b){
+        ArrayList<Integer> originalList = new ArrayList<>();
+        for(int num : a){
+            originalList.add(num);
+        }
+        ArrayList<Integer> intsToFilterOut = new ArrayList<>();
+        for(int num : b){
+            intsToFilterOut.add(num);
+        }
+
+        originalList.removeAll(intsToFilterOut);
+
+        return originalList.stream().mapToInt(e -> e).toArray();
+    }
+
 
         public static void main(String[] args) {
 
@@ -759,6 +774,12 @@ public class ScratchWork {
 
 //        System.out.println(daysSincePosted("2009-06-02 02:23:56.833680"));
 
-//         System.out.println(isCircularSentence("Leetcode is cool"));
-        }
+//        System.out.println(isCircularSentence("Leetcode is cool"));
+
+//        for(int num : arrayDiff(new int[]{1,2,3}, new int[]{1,2})) {
+//            System.out.println(num);
+//        }
+
+
+    }
 }
