@@ -681,6 +681,16 @@ public class ScratchWork {
         return originalList.stream().mapToInt(e -> e).toArray();
     }
 
+    public static int countOdds(int low, int high){
+        int count = 0;
+        for(int i = low; i <= high; i++){
+            if(i % 2 != 0){
+                count++;
+            }
+        }
+        return count;
+    }
+
 
         public static void main(String[] args) {
 
@@ -779,6 +789,8 @@ public class ScratchWork {
 //        for(int num : arrayDiff(new int[]{1,2,3}, new int[]{1,2})) {
 //            System.out.println(num);
 //        }
+
+//            System.out.println(countOdds(327296043,769434803));
 
 
     }
