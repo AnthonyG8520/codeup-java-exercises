@@ -691,6 +691,16 @@ public class ScratchWork {
         return count;
     }
 
+    public static char nextGreatestLetter(char[] letters, char target){
+
+        // create array with whole alphabet
+        // take target parameter remove it and all letters before it from the alphabet array
+        // use loop to check for characters from alphabet in letters parameter by looping through it(letters) starting from beginning (starting from target)
+
+
+        return 'H';
+    }
+
 
         public static void main(String[] args) {
 
