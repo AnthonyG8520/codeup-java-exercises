@@ -692,13 +692,30 @@ public class ScratchWork {
     }
 
     public static char nextGreatestLetter(char[] letters, char target){
+        //this block converts letters array to arraylist
+        ArrayList<Character> lettersList = new ArrayList<>();
+        for(char c : letters){
+            lettersList.add(c);
+        }
 
-        // create array with whole alphabet
-        // take target parameter remove it and all letters before it from the alphabet array
-        // use loop to check for characters from alphabet in letters parameter by looping through it(letters) starting from beginning (starting from target)
+        // this line sets the returned variable to the first index of letters incase next greatest letter doesn't exist
+        char answer = lettersList.get(0);
 
+        // this block creates an array with the alphabet and then removes all letters before and up to the target so that the next greatest letter can be checked for
+        ArrayList<Character> alphabet = new ArrayList<>(Arrays.asList('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'));
+        int removeCharsUpTo = alphabet.indexOf(target);
+        List<Character> charsToRemove = alphabet.subList(0, removeCharsUpTo+1);
+        alphabet.removeAll(charsToRemove);
 
-        return 'H';
+        //this loop check for the next greatest letter by looping through the remainder of the alphabet checking for the chars from letters parameter
+        for(char c : alphabet){
+            if(lettersList.contains(c)){
+                answer = c;
+                break;
+            }
+        }
+
+        return answer;
     }
 
 
@@ -802,6 +819,7 @@ public class ScratchWork {
 
 //            System.out.println(countOdds(327296043,769434803));
 
+            System.out.println(nextGreatestLetter(new char[]{'x', 'x', 'y', 'y'}, 'z'));
 
-    }
+        }
 }
