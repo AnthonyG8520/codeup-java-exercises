@@ -1,4 +1,4 @@
-package ExtraWork;
+package ExtraWork.UnitConversions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,20 +12,19 @@ public class CurrencyConverter {
 
     public static double dollarsToEuros(int amount){
         return amount * .93;
-    };
+    }
 
     public static double eurosToDollars(int amount){
         return amount * 1.07;
-    };
+    }
 
     public static double dollarsToYen(int amount){
         return amount * 157.29;
-    };
+    }
 
     public static double yenToDollars(int amount){
         return amount * .0064;
-    };
-
+    }
 
 
     public static void currencyConverterProgram(){
