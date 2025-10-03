@@ -773,6 +773,20 @@ public class ScratchWork {
             return b;
         }
 
+        public static int minTimeToType(String word){
+            int counter = 0;
+            char startPoint = 'a';
+
+            for(char c : word.toCharArray()){
+                int clockwise = Math.abs(startPoint - c);
+                int counterClockwise = Math.abs(26 - clockwise);
+                counter += Math.min(clockwise, counterClockwise) + 1;
+                startPoint = c;
+                }
+
+            return counter;
+        }
+
 
         public static void main(String[] args) {
 
@@ -879,6 +893,8 @@ public class ScratchWork {
 //            System.out.println(digitize(35231));
 
 //            System.out.println(furthestDistanceFromOrigin("L_RL__R"));
+
+//            System.out.println(minTimeToType("zjpc"));
 
         }
 }
