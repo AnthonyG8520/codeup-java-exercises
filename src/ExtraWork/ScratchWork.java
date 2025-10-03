@@ -718,6 +718,37 @@ public class ScratchWork {
         return answer;
     }
 
+//    public static char nextGreatestLetter(char[] letters, char target) {
+//        int start = 0;
+//        int end = letters.length-1;
+//        while (start <= end){
+//            int mid = start + (end - start)/2;
+//            if(target >= letters[mid]){
+//                start = mid +1;
+//            }
+//            else{
+//                end = mid -1;
+//            }
+//        }
+//        System.gc();
+//        return letters[start % letters.length];
+//    }
+
+        public static ArrayList<Integer> digitize(long n){
+            ArrayList<Integer> digits = new ArrayList<>();
+            if(n == 0){
+                digits.add(0);
+                return digits;
+            }
+            StringBuilder num = new StringBuilder(String.valueOf(n));
+            num.reverse();
+            String reversedNum = num.toString();
+            for(int i = 0; i <= reversedNum.length() - 1; i++){
+                digits.add(reversedNum.charAt(i) - '0');
+            }
+        return digits;
+        }
+
 
         public static void main(String[] args) {
 
@@ -819,7 +850,9 @@ public class ScratchWork {
 
 //            System.out.println(countOdds(327296043,769434803));
 
-            System.out.println(nextGreatestLetter(new char[]{'x', 'x', 'y', 'y'}, 'z'));
+//            System.out.println(nextGreatestLetter(new char[]{'x', 'x', 'y', 'y'}, 'z'));
+//
+//            System.out.println(digitize(35231));
 
         }
 }
