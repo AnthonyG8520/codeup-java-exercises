@@ -749,6 +749,30 @@ public class ScratchWork {
         return digits;
         }
 
+        public static int furthestDistanceFromOrigin(String moves){
+            int l = 0;
+            int r = 0;
+            int us = 0;
+
+            for(int i = 0 ; i < moves.length(); i++){
+                if(moves.charAt(i) == 'L'){
+                    l++;
+                } else if(moves.charAt(i) == 'R'){
+                    r++;
+                }else{
+                    us++;
+                }
+            }
+
+            int a = Math.abs(us+r-l);
+            int b = Math.abs(us+l-r);
+
+            if(a > b){
+                return a;
+            }
+            return b;
+        }
+
 
         public static void main(String[] args) {
 
@@ -853,6 +877,8 @@ public class ScratchWork {
 //            System.out.println(nextGreatestLetter(new char[]{'x', 'x', 'y', 'y'}, 'z'));
 //
 //            System.out.println(digitize(35231));
+
+//            System.out.println(furthestDistanceFromOrigin("L_RL__R"));
 
         }
 }
